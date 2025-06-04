@@ -1,77 +1,100 @@
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Microsoft JhengHei", sans-serif;
+  background-color: #f5f5f5;
   margin: 0;
   padding: 0;
-  background-color: #f9f9f9;
   text-align: center;
 }
 
 header {
-  background-color: #333;
-  color: white;
-  padding: 1rem 0;
+  background-color: #ffffff;
+  padding: 20px 0;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-.logo-animation {
-  font-size: 2rem;
-  background-image: linear-gradient(90deg, orange, purple, lime);
-  background-size: 200% auto;
-  color: transparent;
-  background-clip: text;
+.rainbow-text {
+  font-size: 32px;
+  font-weight: bold;
+  background-image: linear-gradient(
+    270deg,
+    #ff8c00,
+    #ff0,
+    #00ff00,
+    #00ffff,
+    #ff00ff,
+    #ff8c00
+  );
+  background-size: 1000% 100%;
   -webkit-background-clip: text;
-  animation: slideColors 5s linear infinite;
+  -webkit-text-fill-color: transparent;
+  animation: rainbowMove 6s linear infinite;
 }
 
-@keyframes slideColors {
-  to {
-    background-position: 200% center;
-  }
+@keyframes rainbowMove {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
 }
 
-.nav-links {
-  margin: 20px auto;
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  flex-wrap: wrap;
+nav {
+  margin-top: 20px;
 }
 
-.random-box {
+nav a {
+  display: inline-block;
+  margin: 0 15px;
   padding: 10px 20px;
+  text-decoration: none;
   font-weight: bold;
   color: white;
-  background-color: #444;
+  background-color: #0077cc;
   border-radius: 10px;
-  text-decoration: none;
-  transition: background-color 0.3s, transform 0.3s;
+  transition: background-color 0.3s;
 }
 
-.random-box:hover {
-  background-color: #666;
-  transform: scale(1.1);
+nav a:hover {
+  background-color: #005fa3;
 }
 
-.interest-section, .future-section {
-  font-size: 1.5rem;
-  padding: 1.5rem;
+main {
+  padding: 20px;
 }
 
-.future-section li {
-  list-style: none;
-  margin: 1rem 0;
-  font-size: 1.5rem;
+.box {
+  border: 2px solid #ccc;
+  border-radius: 12px;
+  margin: 20px auto;
+  padding: 15px;
+  width: 80%;
+  max-width: 600px;
+  background-color: white;
+  box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
 }
 
-.center-content {
-  margin-top: 50px;
+.icon {
+  width: 40px;
+  height: auto;
+  margin-left: 10px;
+  vertical-align: middle;
 }
 
-.welcome-text {
-  font-size: 1.8rem;
-  margin-bottom: 10px;
+.large-text {
+  font-size: 20px;
 }
 
-.instruction-text {
-  font-size: 1.2rem;
-  margin-bottom: 20px;
+.welcome-character {
+  width: 80px;
+  animation: wave 1.5s infinite ease-in-out;
+}
+.school-logo {
+  width: 80px;
+  height: auto;
+  vertical-align: middle;
+  margin-left: 10px;
+}
+@keyframes wave {
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(15deg); }
+  50% { transform: rotate(-10deg); }
+  75% { transform: rotate(10deg); }
+  100% { transform: rotate(0deg); }
 }
